@@ -9,6 +9,9 @@ For older changes see the [archived Singularity change log](https://github.com/a
 
 Changes since 1.5.x
 
+- Add `dist/gokrazy` for packaging a statically linked Apptainer for the
+  [gokrazy](https://gokrazy.org/) appliance platform. See
+  `dist/gokrazy/README.md`.
 - When the host lacks the `/dev/fd`, `/dev/stdin`, `/dev/stdout` or
   `/dev/stderr` symlinks (e.g. hosts without udev), create them in the
   container's minimal `/dev` instead of failing.
