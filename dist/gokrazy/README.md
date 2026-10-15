@@ -13,8 +13,9 @@ gokrazy builds every package as a pure Go program, but Apptainer's runtime
   Apptainer installation under `/usr/local/apptainer`, including static
   `mksquashfs`, `unsquashfs`, `newuidmap` and `newgidmap`, plus minimal
   `/etc/passwd`, `/etc/group`, `/etc/subuid` and `/etc/subgid` files and a
-  `/root` mount point. These tarballs are built by `build.sh` and are not
-  checked in.
+  `/root` mount point. These tarballs are built by `build.sh` and are checked
+  in, so the package can be added to a gokrazy instance without building
+  them first. Rebuild and commit them whenever the Apptainer sources change.
 
 ## Building
 
@@ -35,11 +36,19 @@ docker run --privileged --rm tonistiigi/binfmt --install arm64
 
 ## Adding to a gokrazy instance
 
-Add the wrapper package from your local checkout, then deploy as usual:
+The prebuilt tarballs are committed, so the package can be added directly
+without building anything:
+
+```sh
+gok -i <instance> add github.com/ascension-association/gk-apptainer/dist/gokrazy/apptainer@bare-metal
+gok -i <instance> update
+```
+
+Alternatively, add the wrapper package from a local checkout (for example
+after running `build.sh`):
 
 ```sh
 gok -i <instance> add ./dist/gokrazy/apptainer
-gok -i <instance> update
 ```
 
 ## Usage
