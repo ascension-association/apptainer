@@ -9,9 +9,10 @@ For older changes see the [archived Singularity change log](https://github.com/a
 
 Changes since 1.5.x
 
-- Add `dist/gokrazy` for packaging a statically linked Apptainer for the
-  [gokrazy](https://gokrazy.org/) appliance platform. See
-  `dist/gokrazy/README.md`.
+- Skip missing host `/etc/hosts` and `/etc/resolv.conf` files when staging
+  builds, allowing OCI-to-SIF conversion on minimal hosts.
+- Preserve local SIF images when `--disable-cache` is combined with
+  `--unsquash` or automatic extraction to a temporary sandbox.
 - When the host lacks the `/dev/fd`, `/dev/stdin`, `/dev/stdout` or
   `/dev/stderr` symlinks (e.g. hosts without udev), create them in the
   container's minimal `/dev` instead of failing.
@@ -33,6 +34,11 @@ Changes since 1.5.x
   build a SIF file with an overlay partition in it, but adding a
   `--sandbox` option will build a sandbox.  The base image itself cannot
   be a sandbox because a sandbox does not have a hash.
+- Add a `--basepath` action command option (and `APPTAINER_BASEPATH`
+  environment variable), a colon-separated list of paths to search for
+  the base image of an overlay image built with `apptainer build
+  --overlay`, so it can be combined with the overlay automatically at
+  run time.
 - Allow pushing multiple images with different architectures (multi-arch)
   to an oras URI, creating an image index with all the pushed arch images.
 - Add support for building data partitions from tar files using
@@ -151,9 +157,16 @@ Changes since 1.5.x
   Python extension, and explicitly disabling it improves the build
   reproducibility by ensuring a `libpython` dependency does not get
   introduced based on the build host's environment.
+- Fix `apptainer pull` picking an empty or malformed default destination
+  filename when the source URI ends in a trailing slash, e.g.
+  `docker://sylabs.io/lolcow/` or `https://example.com/foo/`. Only
+  leading slashes were trimmed from the reference before taking its last
+  path component, so a trailing slash left an empty final component.
 
-## v1.5.x changes
+## v1.5.5 - \[2026-10-22\]
 
+- Update minimum go to 1.26.10 in order to pick up fix to block
+  compromised emSign intermediate CA certificates.
 - Fix `apptainer pull` failing when `APPTAINER_PULLDIR` is set and the
   destination (`--name` or positional) is an absolute path. An absolute
   destination now takes precedence over the pull directory instead of

@@ -1,14 +1,14 @@
 module github.com/apptainer/apptainer
 
-go 1.26.5
+go 1.26.10
 
 require (
 	github.com/Netflix/go-expect v0.0.0-20220104043353-73e0943537d2
-	github.com/ProtonMail/go-crypto v1.4.1
+	github.com/ProtonMail/go-crypto v1.5.2
 	github.com/apex/log v1.9.0
 	github.com/apptainer/container-key-client v0.9.0
 	github.com/apptainer/container-library-client v1.5.0
-	github.com/apptainer/sif/v2 v2.24.1
+	github.com/apptainer/sif/v2 v2.25.0
 	github.com/astromechza/etcpwdparse v0.0.0-20170319193008-f0e5f0779716
 	github.com/blang/semver/v4 v4.0.0
 	github.com/buger/jsonparser v1.6.1
@@ -25,7 +25,7 @@ require (
 	github.com/gorilla/mux v1.8.1
 	github.com/gosimple/slug v1.15.0
 	github.com/moby/go-archive v0.3.3
-	github.com/moby/moby/client v0.6.1
+	github.com/moby/moby/client v0.6.2
 	github.com/opencontainers/cgroups v0.1.0
 	github.com/opencontainers/go-digest v1.0.0 // indirect
 	github.com/opencontainers/image-spec v1.1.1
@@ -37,7 +37,7 @@ require (
 	github.com/pelletier/go-toml/v2 v2.4.3
 	github.com/pkg/errors v0.9.1
 	github.com/seccomp/libseccomp-golang v0.12.0
-	github.com/shopspring/decimal v1.4.0
+	github.com/shopspring/decimal v1.6.0
 	github.com/sigstore/sigstore v1.10.11
 	github.com/spf13/cobra v1.10.2
 	github.com/spf13/pflag v1.0.10
@@ -46,9 +46,9 @@ require (
 	go.podman.io/image/v5 v5.41.2
 	go.yaml.in/yaml/v4 v4.0.0-rc.6
 	golang.org/x/crypto v0.57.0
-	golang.org/x/sys v0.48.0
+	golang.org/x/sys v0.49.0
 	golang.org/x/term v0.46.0
-	golang.org/x/text v0.42.0
+	golang.org/x/text v0.43.0
 	gotest.tools/v3 v3.5.2
 	mvdan.cc/sh/v3 v3.14.1
 )
@@ -59,7 +59,7 @@ require (
 	github.com/apptainer/json-resp v0.10.0
 	github.com/buger/goterm v1.0.4
 	github.com/ccoveille/go-safecast/v2 v2.0.1
-	github.com/docker/cli v29.8.2+incompatible
+	github.com/docker/cli v29.9.2+incompatible
 	github.com/docker/distribution v2.8.3+incompatible
 	github.com/docker/docker v28.5.2+incompatible
 	github.com/moby/sys/sequential v0.7.0
@@ -67,6 +67,7 @@ require (
 	github.com/moby/sys/userns v0.2.1
 	github.com/samber/lo v1.53.0
 	github.com/sirupsen/logrus v1.10.2
+	github.com/stretchr/testify v1.12.1
 	tags.cncf.io/container-device-interface v1.1.1
 )
 
@@ -93,7 +94,7 @@ require (
 	github.com/cyberphone/json-canonicalization v0.0.0-20241213102144-19d51d7fe467 // indirect
 	github.com/distribution/reference v0.6.0 // indirect
 	github.com/docker/docker-credential-helpers v0.9.8 // indirect
-	github.com/docker/go-connections v0.8.1 // indirect
+	github.com/docker/go-connections v0.8.2 // indirect
 	github.com/docker/go-metrics v0.0.1 // indirect
 	github.com/docker/libtrust v0.0.0-20160708172513-aabc10ec26b7 // indirect
 	github.com/felixge/httpsnoop v1.0.4 // indirect
@@ -170,7 +171,7 @@ require (
 	go.yaml.in/yaml/v2 v2.4.4 // indirect
 	go.yaml.in/yaml/v3 v3.0.5 // indirect
 	golang.org/x/net v0.58.0 // indirect
-	golang.org/x/sync v0.23.0 // indirect
+	golang.org/x/sync v0.24.0 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20260803160001-6ac0973c030d // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20260803160001-6ac0973c030d // indirect
 	google.golang.org/grpc v1.83.2 // indirect

@@ -114,7 +114,7 @@ _**NOTE:** if you are updating Go from a older version, make sure you remove
 `/usr/local/go` before reinstalling it._
 
 ```sh
-export GOVERSION=1.26.5 OS=linux ARCH=amd64  # change this as you need
+export GOVERSION=1.26.10 OS=linux ARCH=amd64  # change this as you need
 
 wget -O /tmp/go${GOVERSION}.${OS}-${ARCH}.tar.gz \
   https://dl.google.com/go/go${GOVERSION}.${OS}-${ARCH}.tar.gz
@@ -176,7 +176,7 @@ To build a specific version of Apptainer, check out a
 for example:
 
 ```sh
-git checkout v1.5.4
+git checkout v1.5.5
 ```
 
 ## Compiling Apptainer
@@ -346,7 +346,7 @@ Then download the latest
 <!-- markdownlint-disable MD013 -->
 
 ```sh
-VERSION=1.5.4  # this is the apptainer version, change as you need
+VERSION=1.5.5  # this is the apptainer version, change as you need
 # Fetch the source
 wget https://github.com/apptainer/apptainer/releases/download/v${VERSION}/apptainer-${VERSION}.tar.gz
 ```
